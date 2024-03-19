@@ -1,0 +1,10 @@
+# @package _group_
+name: "attack"
+
+concrete_num_eval_episodes: 100
+
+# attack target
+attacker_name: 'MAD'
+benchmark_name : 'hopper'
+model_name: 'CAROL'
+attack_steps_list: [10_000_0] 

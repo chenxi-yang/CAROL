@@ -1,0 +1,61 @@
+# @package _group_
+env: "ant"
+trial_length: 1000
+
+num_steps: 900000
+epoch_length: 1000
+num_elites: 5
+patience: 10
+model_lr: 0.0003
+model_wd: 5e-5
+model_batch_size: 256
+validation_ratio: 0.2
+freq_train_model: 250
+effective_model_rollouts_per_step: 400
+rollout_schedule: [20, 100, 1, 25]
+num_sac_updates_per_step: 20
+sac_updates_every_steps: 1
+num_epochs_to_retain_sac_buffer: 1
+lamb: 0.1
+
+sac_gamma: 0.99
+sac_tau: 0.005
+sac_alpha: 0.2
+sac_policy: "SymGaussian"
+sac_target_update_interval: 4
+sac_automatic_entropy_tuning: false
+sac_target_entropy: -1 # ignored, since entropy tuning is false
+sac_hidden_size: 1024
+sac_lr: 0.0001
+sac_batch_size: 256
+sac_truncate_scale: 0.5
+
+# verification
+eschedule: "ref" # ["constant", "linear", "exp", "smooth"]
+eschedule_start_steps: 300000
+eschedule_end_steps: 800000
+start_disturbance: 0.0
+disturbance: 0.05
+exp_scale: 10
+use_original_loss: True
+use_reward_bound: True
+use_splitter: True
+splitter: "original" # 'original': use the current disturbance;
+partition_refined: 100
+sample_scale: 2 # final sample numbers = sample_num * original
+model_normalization: False
+sample_original_rollout_batch: False
+partition_per_dim: 1 # total partition: partition_per_dim**self.obs_shape
+keep_q_partition_per_dim: 1
+keep_q_sample_size: 1
+
+# normalized env
+norm_states: true
+norm_reward: "returns"
+gamma: 0.99
+add_t_with_horizon: None
+clip_obs: 10.0
+clip_rew: 10.0
+show_env: false
+save_frames: false
+save_frames_path: "frames/"

@@ -1,0 +1,10 @@
+# @package _group_
+name: "provability"
+
+concrete_num_eval_episodes: 25
+eps: 0.00392156862745098 # 1/255
+
+# test target
+benchmark_name: 'hopper'
+model_name: 'CAROL'
+horizon_steps_list: [5, 10, 15, 20, 25]

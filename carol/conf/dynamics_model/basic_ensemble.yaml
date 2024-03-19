@@ -1,0 +1,17 @@
+# @package _group_
+_target_: carol.models.BasicEnsemble
+ensemble_size: 5
+device: ${device}
+propagation_method: fixed_model
+member_cfg:
+  # _target_: carol.models.DeterministicModel # mbrl.models.GaussianMLP
+  _target_: carol.models.TruncatedNormalMLP
+  device: ${device}
+  num_layers: 4
+  in_size: ???
+  out_size: ???
+  hid_size: 200
+  deterministic: false
+  activation_fn_cfg:
+    _target_: torch.nn.SiLU
+  

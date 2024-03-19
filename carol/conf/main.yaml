@@ -1,0 +1,32 @@
+defaults:
+  - algorithm: core
+  - dynamics_model: symgaussian_mlp # symgaussian_mlp # deterministic_mlp # gaussian_mlp # for dynamics model
+  - overrides: cartpole 
+  - action_optimizer: cem
+  - evaluation: attack
+use_safety_loss: true
+use_concrete_safety_loss: false
+no_policy_loss: false
+regulate_delta: false
+safety_method: symbolic
+domain: "box" 
+
+seed: 1
+device: "cuda:0"
+log_frequency_agent: 1000
+save_video: false
+debug_mode: true
+no_safety_test: false
+resume: false
+
+experiment: default
+
+root_dir: "./exp"
+hydra:
+  run:
+    # dir: ${root_dir}/${algorithm.name}/${experiment}/${overrides.env}/${now:%Y.%m.%d}/${now:%H%M%S}
+    dir: ${root_dir}/${overrides.env}/${algorithm.name}/${experiment}_${seed}
+
+  sweep:
+    # dir: ${root_dir}/${algorithm.name}/${experiment}/${overrides.env}/${now:%Y.%m.%d}/${now:%H%M%S}
+    dir: ${root_dir}/${overrides.env}/${algorithm.name}/${experiment}_${seed}

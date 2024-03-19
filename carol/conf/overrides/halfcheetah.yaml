@@ -1,0 +1,76 @@
+# @package _group_
+env: "halfcheetah"
+trial_length: 1000
+
+num_steps: 850000
+epoch_length: 1000
+num_elites: 5
+patience: 5
+model_lr: 0.001
+model_wd: 0.00001
+model_batch_size: 256
+validation_ratio: 0.2
+freq_train_model: 250
+effective_model_rollouts_per_step: 400
+rollout_schedule: [20, 150, 1, 1]
+num_sac_updates_per_step: 10
+sac_updates_every_steps: 1
+num_epochs_to_retain_sac_buffer: 1
+lamb: 0.5
+
+sac_gamma: 0.99
+sac_tau: 0.005
+sac_alpha: 0.2
+sac_policy: "SymGaussian"
+sac_target_update_interval: 1
+sac_automatic_entropy_tuning: true
+sac_target_entropy: -1
+sac_hidden_size: 512
+sac_lr: 0.0003
+sac_batch_size: 256
+sac_truncate_scale: 0.5
+
+# verification
+eschedule: "ref" # ["constant", "linear", "exp", "smooth"]
+eschedule_start_steps: 300000 # 120000
+eschedule_end_steps: 750000 # 480000
+start_disturbance: 0.0
+disturbance: 0.075
+exp_scale: 10
+use_original_loss: True
+use_reward_bound: True
+use_splitter: True
+splitter: "original" # 'original': use the current disturbance;
+partition_refined: 100
+sample_scale: 2 # final sample numbers = sample_num * original
+model_normalization: False
+sample_original_rollout_batch: False
+partition_per_dim: 1 # total partition: partition_per_dim**self.obs_shape
+keep_q_partition_per_dim: 1
+keep_q_sample_size: 1
+
+# normalized env
+norm_states: true
+norm_reward: "returns"
+gamma: 0.99
+add_t_with_horizon: None
+clip_obs: 10.0
+clip_rew: 10.0
+show_env: false
+save_frames: false
+save_frames_path: "frames/"
+
+
+# disturbance: 0.15
+# use_disjunctions: False
+# disjunctions: 15
+# safety_silence: True
+# use_trunscale: False
+# eschedule: false 
+# # 0 -> 0.15 use 600k steps, epoch length 1000
+# start_eps: 0.0 # if eschedule is True
+# step_bar: 1000 # if eschedule is True
+# eps_step_size: 0.00025 # if eschedule is True
+# eschedule_delay: false # if eschedule is True
+# delay_stops: 100000 # if eschedule is True
+

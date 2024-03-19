@@ -1,0 +1,11 @@
+auto_LiRPA==0.3
+cox==0.1.post3
+gym==0.17.2
+hydra-core==1.3.1
+mbrl==0.1.5
+numpy==1.23.0
+omegaconf==2.2.0
+packaging==21.3
+termcolor==1.1.0
+torch==1.12.1
+tqdm==4.63.0
