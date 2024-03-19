@@ -1,6 +1,6 @@
 # CAROL
 
-This repository contains main implementation for CAROL.
+This repository contains main implementation for CAROL: [Certifiably Robust Reinforcement Learning through Model-Based Abstract Interpretation](https://arxiv.org/abs/2301.11374). (SaTML'24)
 
 ## Training Requirements
 The main code is tested with Python 3.8.12. The required packages are listed in `requirements.txt` and can be intalled with 
