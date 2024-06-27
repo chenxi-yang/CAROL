@@ -6,6 +6,8 @@ This repository contains main implementation for CAROL: [Certifiably Robust Rein
 The main code is tested with Python 3.8.12. The required packages are listed in `requirements.txt` and can be intalled with 
 
 `pip install -r requirements.txt`
+`pip install auto_LiRPA==0.3`
+`pip install hydra-core==1.3.1`
 
 Additionally, MuJoCo 2.1 is required. 
 
@@ -15,6 +17,8 @@ To run the code, you need add this project's path in the PYTHONPATH with
 
 ## Running
 To run the training for experiments in the paper,
+
+`cd carol`
 
 `python run.py overrides=hopper`
 
