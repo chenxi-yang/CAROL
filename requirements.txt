@@ -3,7 +3,6 @@ cox==0.1.post3
 gym==0.17.2
 hydra-core==1.3.1
 mbrl==0.1.5
-mbrl.egg==info
 numpy==1.22.2
 omegaconf==2.1.0
 packaging==21.3
