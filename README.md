@@ -1,17 +1,19 @@
 # CAROL
 
-This repository contains main implementation for CAROL: [Certifiably Robust Reinforcement Learning through Model-Based Abstract Interpretation](https://arxiv.org/abs/2301.11374). (SaTML'24)
+This repository contains the main implementation for CAROL: [Certifiably Robust Reinforcement Learning through Model-Based Abstract Interpretation](https://arxiv.org/abs/2301.11374). (SaTML'24)
 
 ## Training Requirements
-The main code is tested with Python 3.8.12. The required packages are listed in `requirements.txt` and can be intalled with 
+The main code is tested with Python 3.8.12. The required packages are listed in `requirements.txt` and can be installed with 
 
 `pip install -r requirements.txt`
+
 `pip install auto_LiRPA==0.3`
+
 `pip install hydra-core==1.3.1`
 
 Additionally, MuJoCo 2.1 is required. 
 
-To run the code, you need add this project's path in the PYTHONPATH with 
+To run the code, you need to add this project's path in the PYTHONPATH with 
 
 `export PYTHONPATH=$PYTHONPATH:/path/to/carol`
 
@@ -43,7 +45,7 @@ To run provability experiments for this example (with the proof packages):
 
 `python test_provability.py evaluation=provability overrides=hopper`
 
-To run empirical attack on this example:
+To run an empirical attack on this example:
 
 `cd evaluation`
 
